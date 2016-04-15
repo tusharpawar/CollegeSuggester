@@ -34,7 +34,7 @@ class GenderAdmin(admin.ModelAdmin):
 		model=Gender
 
 class CutOffAdmin(admin.ModelAdmin):
-	list_display=['id','cet_marks','merit_no','college','branch','category','gender','university_type']
+	list_display=['id','cet_marks','merit_no','college','branch','category','gender','university_type','admission_round']
 
 	class Meta:
 		model=CutOff

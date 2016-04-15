@@ -16,6 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+#for django-rest-interface- please remove next line if not necessary
+"""
+from django_restapi.model_resource import Collection
+from django_restapi.responder import JSONResponder
+
+CutOff_resource=Collection(
+	queryset=CutOff.objects.all(),
+	responder=JSONResponder())
+"""
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url for django-rest-interface
+    #url(r'^json/cutoffs/(.*?)/?$', CutOff_resource),
 ]

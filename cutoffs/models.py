@@ -68,10 +68,11 @@ class CutOff(models.Model):
 	category=models.ForeignKey(Category)
 	gender=models.ForeignKey(Gender)
 	university_type=models.CharField(choices=UNIVERSITY_TYPE_CHOICES,default="Other",max_length=128)
+	admission_round=models.IntegerField(blank=False, default=1)
 	"""docstring for CutOff
 	def __init__(self, arg):
 		super(CutOff, self).__init__()
 		self.arg = arg"""
 	
-	def __str__(self):
-		return (str)(self.id) + (str)(self.cet_marks) + (str)(self.merit_no)	
+	def __str__(self): 
+		return (str)(self.id) + (str)(self.cet_marks) + (str)(self.merit_no)+self.college.name +self.branch.name +self.admission_round	
